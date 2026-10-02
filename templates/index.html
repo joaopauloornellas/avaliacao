@@ -26,7 +26,7 @@
         <div class="card">
             <div class="card-header">Informe seus dados</div>
             <div class="card-body">
-                <form method="post" action="/">
+                <form method="post" action="{{ url_for('formulario') }}">
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nome" name="nome" required>
@@ -50,8 +50,8 @@
             <div class="card-header">Resultado</div>
             <div class="card-body">
                 <div class="alert alert-success mb-0" role="alert">
-                    <h4 class="alert-heading">Nome da pessoa</h4>
-                    <p class="mb-1">Seu IMC é <strong>00,00</strong></p>
+                    <h4 class="alert-heading">{{ nome }}</h4>
+                    <p class="mb-1">Seu IMC é <strong>{{ imc | round(2) }}</strong></p>
                     <p class="mb-0">Faixa: <strong>Nome da faixa</strong></p>
                 </div>
             </div>
